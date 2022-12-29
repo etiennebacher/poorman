@@ -181,7 +181,8 @@ select_bracket <- function(expr) {
 }
 
 select_context <- function(expr) {
-  eval(expr, envir = select_env$.data)
+  evaluated <- eval(expr, envir = select_env$.data)
+  eval_expr(evaluated)
 }
 
 # -- Environment ---------------------------------------------------------------

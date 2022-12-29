@@ -208,3 +208,9 @@ expect_error(
   poorman:::select_positions(mtcars, TRUE),
   info = "Logical selections do not work"
 )
+
+d <- data.frame(x = 1, y1 = 2, y2 = 3)
+expect_equal(
+  poorman:::select_positions(d, names(d)[-1]),
+  c("y1" = 2, "y2" = 3)
+)
